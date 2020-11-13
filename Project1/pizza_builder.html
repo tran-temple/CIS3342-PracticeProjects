@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+
+    <link href="styles/MyStyles.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        div.content {
+            background-image: url("images/pizza_background.png");
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+            min-width: 650px;  
+        }
+        div.transbox {
+            margin: auto;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.85;
+            text-shadow: 0.3px 0.3px lightgoldenrodyellow;
+            padding: 20px;
+            width: 600px;
+            height: 770px;
+        }
+    </style>
+</head>
+<body>
+    <div class="titleNav">
+        <div class="pageTitle">
+            Rainbow Pizza Shop
+        </div>
+    </div>
+    <div class="content">
+        <div class="transbox">
+            <form id="frmPizzaBuilder" method="post" action="PizzaReceipt.aspx">
+                <h2 style="text-align:center;"> *** Welcome to the Pizza shop *** </h2>
+                <!--Customer Info-->
+                <div class="customer_info">
+                    <div><b>Customer Information</b></div>
+                    <!--textbox-->
+                    <p>
+                        <span>Name:</span>
+                        <input type="text" id="txtName" name="customerName" style="width:25%"/>&nbsp;&nbsp;
+                        <span>Phone:</span>
+                        <input type="text" id="txtPhone" name="customerPhone" style="width:20%"/><br /><br />
+                        <span>Address:</span>
+                        <input type="text" id="txtAddress" name="customerAddress" style="width:55%"/>
+                    </p>
+                </div>
+
+                <!--radio button-->
+                <p>
+                    <span>Delivery type:</span>
+                    <input type="radio" id="radDelivery" name="deliveryType" value="delivery">
+                    <label for="radDelivery">Delivery</label>&nbsp;&nbsp;
+                    <input type="radio" id="radPickup" name="deliveryType" value="pick-up">
+                    <label for="radPickup">Pick-up</label>
+                </p>
+
+                <!--Pizza Size-->
+                <div class="pizza_size">
+                    <div><b>Choose Size For Your Pizza</b></div>
+                    <p>
+                        <!--radio button-->
+                        <input type="radio" id="radSmall" name="pizzaSize" value="small">
+                        <label for="radSmall">Small</label>
+                        <input type="radio" id="radMedium" name="pizzaSize" value="medium">
+                        <label for="radMedium">Medium</label>
+                        <input type="radio" id="radLarge" name="pizzaSize" value="large">
+                        <label for="radLarge">Large</label>
+                        <input type="radio" id="radExtralarge" name="pizzaSize" value="extralarge">
+                        <label for="radExtralarge">Extra-large</label>
+                    </p>
+                </div>
+
+                <!--Custom Pizza-->
+                <div class="pizza_info">
+                    <div><b>Customize Your Pizza</b></div>
+
+                    <!--radio button-->
+                    <p>
+                        <span>Toasted</span>
+                        <input type="radio" id="radToastYes" name="toasted" value="yes">
+                        <label for="radToastYes"> Yes</label>
+                        <input type="radio" id="radToastNo" name="toasted" value="no">
+                        <label for="radToastNo"> No</label>
+                    </p>
+
+                    <!--drop-down list-->
+                    <p>
+                        <label for="lstSauce">The sauce type:</label>
+                        <select id="lstSauce" name="sauce">
+                            <option selected value="none">Choose...</option>
+                            <option value="tomato">Tomato</option>
+                            <option value="bechamel">Bechamel (white)</option>
+                            <option value="salsa">Salsa</option>
+                            <option value="bbq">BBQ</option>
+                            <option value="hummus">Hummus</option>
+                        </select>
+                    </p>
+
+                    <!--checkbox-->
+                    <p>
+                        <label for="toppings"><b>* Choose toppings:</b></label><br />
+                        <input type="checkbox" id="chkPepperoni" name="toppings" value="pepperoni"> Pepperoni
+                        <input type="checkbox" id="chkSausage" name="toppings" value="sausage"> Sausage
+                        <input type="checkbox" id="chkBacon" name="toppings" value="bacon"> Bacon
+                        <input type="checkbox" id="chkHam" name="toppings" value="ham"> Ham <br />
+                        <input type="checkbox" id="chkOnions" name="toppings" value="onions"> Onions
+                        <input type="checkbox" id="chkPeppers" name="toppings" value="peppers"> Peppers
+                        <input type="checkbox" id="chkMushrooms" name="toppings" value="mushrooms"> Mushrooms <br />
+                    </p>
+
+                    <!--checkbox-->
+                    <p>
+                        <label for="additions"><b>* Choose premium additions:</b></label><br />
+                        <input type="checkbox" id="chkExtraChese" name="additions" value="extraChese"> Extra cheese
+                        <input type="checkbox" id="chkExtraMeat" name="additions" value="extraMeat"> Extra meat
+                        <input type="checkbox" id="chkExtraSauce" name="additions" value="extraSauce"> Extra sauce <br />
+                        <input type="checkbox" id="chkOlive" name="additions" value="blackolive"> Black Olive
+                        <input type="checkbox" id="chkEgg" name="additions" value="egg"> Eggs <br />
+                    </p>
+                </div>
+
+
+                <!--drop-down list-->
+                <p>
+                    <label><b>Family Meal:</b></label><br />
+                    <label> 2-liter soda and a side: </label>
+                    <select id="lstSide" name="side">
+                        <option selected value="none">Choose...</option>
+                        <option value="salad">Salad</option>
+                        <option value="fries">Fries</option>
+                        <option value="wings">Wings</option>
+                        <option value="nuggets">Nuggets</option>
+                        <option value="breadsticks">Breadsticks</option>
+                    </select>
+                </p>
+
+                <!--textbox-->
+                <p>
+                    <label>Tip:</label>
+                    <input type="text" id="txtTip" name="tip" style="width:15%"/>
+                </p>
+
+                <!--button-->
+                <input type="submit" id="btnSubmitOrder" name="submitOrder" value="Submit" />
+            </form>
+        </div>
+    </div> <!-- end of  content -->
+
+    <div class="footer">
+        HONG TRAN
+    </div>
+</body>
+</html>
