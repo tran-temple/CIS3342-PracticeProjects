@@ -11,11 +11,8 @@ namespace ReviewLibrary
     public class DBConnect
     {
         // Main Connection String - used for the published web application and project submissions.
-        //String SqlConnectString = "server=cis-mssql1.temple.edu;Database=xxxx_xxxx_xxxxxxxx;User id=xxxxxxxx;Password=xxxxxxxx";
-
-        // Home Connection String - used for working from home using SSH Tunneling.
-        String SqlConnectString = "server=127.0.0.1,5555;Database=fa20_3342_tuk85873;User id=tuk85873;Password=iV3EiP9Uhe";
-
+        String SqlConnectString = "server=cis-mssql1.temple.edu;Database=xxxx_xxxx_xxxxxxxx;User id=xxxxxxxx;Password=xxxxxxxx";
+        
         SqlConnection myConnectionSql;
         SqlCommand objCmd;
         SqlDataReader objDataReader;
